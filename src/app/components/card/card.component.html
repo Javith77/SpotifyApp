@@ -1,0 +1,20 @@
+<div class="row row-cols-1 row-cols-md-3 g-4 animated fadeIn">
+  <div class="col" *ngFor="let item of items">
+    <div class="card h-100  puntero" (click)="getArtist( item )">
+      <img [src]="item.images | notimage" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">{{ item.name }} </h5>
+        <p class="card-text">
+          <span class="badge rounded-pill bg-dark"  *ngFor="let artist of item.artists">
+            {{ artist.name }}
+          </span>
+          <span class="badge rounded-pill bg-dark"  *ngFor="let genres of item.genres">
+            {{ genres }}
+          </span>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">{{ item.release_date }}</small>
+      </div>
+    </div>
+  </div>
+</div>

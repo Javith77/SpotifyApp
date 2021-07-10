@@ -1,0 +1,6 @@
+<div class="input-group mb-3">
+  <input #term (keyup)="search(term.value)" type="search" class="form-control" placeholder="search...">
+</div>
+
+<app-loading *ngIf="loading"></app-loading>
+<app-card [items]="artists" *ngIf="!loading"></app-card>
